@@ -6,15 +6,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import selitskiyapp.hometasks.hw4news.domain.NewsInteractor
-import selitskiyapp.hometasks.hw4news.network.Article
+import selitskiyapp.hometasks.hw4news.presentation.objects.News
 
 class NewsViewModel(private val interactor: NewsInteractor) : ViewModel() {
-    private val _news = MutableLiveData<List<Article>>()
-    val news: LiveData<List<Article>> get() = _news
-
-    init {
-        loadNews()
-    }
+    private val _news = MutableLiveData<List<News>>()
+    val news: LiveData<List<News>> get() = _news
 
     fun onNewsItemClicked(position: Int) {
         val item = _news.value?.get(position) ?: return
@@ -23,9 +19,9 @@ class NewsViewModel(private val interactor: NewsInteractor) : ViewModel() {
         _news.value = list
     }
 
-    private fun loadNews() {
+     fun loadNetworkNews() {
         viewModelScope.launch {
-//            _news.value = listOf(interactor.getNews())
+            _news.value = interactor.getNetworkNews()
         }
     }
 }

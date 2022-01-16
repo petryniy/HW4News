@@ -1,4 +1,4 @@
-package selitskiyapp.hometasks.hw4news.presentation.domain
+package selitskiyapp.hometasks.hw4news.domain
 
 interface OnNewsClickListener {
     fun onIconClickListener(position: Int)

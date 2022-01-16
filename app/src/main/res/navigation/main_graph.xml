@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/newsFragment"
-        android:name="selitskiyapp.hometasks.hw4news.presentation.NewsFragment"
+        android:name="selitskiyapp.hometasks.hw4news.presentation.fragments.NewsNetworkFragment"
         android:label="fragment_news"
-        tools:layout="@layout/fragment_news" >
+        tools:layout="@layout/fragment_news_network" >
         <action
             android:id="@+id/to_newsDAOFragment"
             app:destination="@id/newsDAOFragment" />

@@ -1,9 +1,8 @@
-package selitskiyapp.hometasks.hw4news.network
+package selitskiyapp.hometasks.hw4news.data.network
 
 import retrofit2.http.GET
 import retrofit2.http.Query
-import selitskiyapp.hometasks.hw4news.network.NewsResponse
-import selitskiyapp.hometasks.hw4news.network.SourceResponce
+import selitskiyapp.hometasks.hw4news.data.network.SourceResponse
 
 interface NewsApi {
 
@@ -47,13 +46,13 @@ interface NewsApi {
         @Query("language") language: String,
         @Query("country") country: String,
         @Query("apiKey") apiKey: String = RetrofitClient.API_KEY
-    ): SourceResponce
+    ): SourceResponse
 
     @GET("sources")
     suspend fun getSourcesByLanguage(
         @Query("language") language: String,
         @Query("apiKey") apiKey: String = RetrofitClient.API_KEY
-    ): SourceResponce
+    ): SourceResponse
 
     /**
      * This endpoint provides live top and breaking headlines for a country,

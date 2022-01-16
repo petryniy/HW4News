@@ -1,8 +1,8 @@
-package selitskiyapp.hometasks.hw4news.network
+package selitskiyapp.hometasks.hw4news.data.network
 
 import com.google.gson.annotations.SerializedName
 
-data class SourceResponce(
+data class SourceResponse(
     @SerializedName("status")
     val status: String?,
     @SerializedName("sources")
