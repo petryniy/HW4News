@@ -1,4 +1,4 @@
-package selitskiyapp.hometasks.hw4news.presentation.recycler
+package selitskiyapp.hometasks.hw4news.presentation.recyclernetwork
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -17,9 +17,7 @@ class NewsViewHolder(
         fun from(parent: ViewGroup, itemClickListener: OnNewsClickListener): NewsViewHolder {
             return NewsViewHolder(
                 FragmentNewsItemBinding.inflate(
-                    LayoutInflater.from(parent.context),
-                    parent, false
-                ),
+                    LayoutInflater.from(parent.context), parent, false),
                 itemClickListener
             )
         }

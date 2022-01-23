@@ -125,8 +125,8 @@ interface NewsApi {
         @Query("language") language: String?,
         @Query("sortBy") sortBy: String,
         @Query("page") pageNumber: Int = 1,
-        @Query("sources") sources: String = "RBC",
-        @Query("pageSize") pageSize: Int = 20,
+        @Query("sources") sources: String = "Lenta",
+        @Query("pageSize") pageSize: Int = 5,
         @Query("apiKey") apiKey: String = RetrofitClient.API_KEY
     ): NewsResponse
 

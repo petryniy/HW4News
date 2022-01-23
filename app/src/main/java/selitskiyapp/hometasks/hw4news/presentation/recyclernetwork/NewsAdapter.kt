@@ -1,5 +1,6 @@
-package selitskiyapp.hometasks.hw4news.presentation.recycler
+package selitskiyapp.hometasks.hw4news.presentation.recyclernetwork
 
+import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import selitskiyapp.hometasks.hw4news.domain.OnNewsClickListener
@@ -19,6 +20,7 @@ class NewsAdapter(
 
     override fun getItemCount() = items.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun submitList(data: List<News>) {
         items = data
         notifyDataSetChanged()

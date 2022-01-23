@@ -5,34 +5,21 @@ import selitskiyapp.hometasks.hw4news.data.network.Articles
 import selitskiyapp.hometasks.hw4news.presentation.objects.News
 
 fun NewsEntity.toNews() =
-//    source?.let {
         News(
-//            source = it,
             title = title,
             urlToImage = urlToImage,
 
-            isChecked = isChecked
+            isChecked = true
         )
-//    }
 
 fun News.toNewsEntity() =
-//    source?.let {
         NewsEntity(
-//            source = it,
             title = title,
             urlToImage = urlToImage,
-
-            isChecked = isChecked
         )
-//    }
 
 fun Articles.toNews() =
-//    source?.let {
         News(
-//            source = it,
             title = title,
-            urlToImage = previewUrl,
-
-            isChecked = isChecked
+            urlToImage = urlToImage,
         )
-//    }

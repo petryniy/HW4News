@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import selitskiyapp.hometasks.hw4news.data.dao.NewsEntity
 import selitskiyapp.hometasks.hw4news.domain.NewsInteractor
 import selitskiyapp.hometasks.hw4news.presentation.objects.News
 
@@ -17,11 +18,27 @@ class NewsViewModel(private val interactor: NewsInteractor) : ViewModel() {
         val list = _news.value?.toMutableList() ?: return
         list[position] = item.copy(isChecked = !item.isChecked)
         _news.value = list
+
+        insertToDataNews(item)
     }
 
-     fun loadNetworkNews() {
+    fun loadNetworkNews() {
         viewModelScope.launch {
             _news.value = interactor.getNetworkNews()
+        }
+    }
+
+    fun insertToDataNews(news: News) {
+        viewModelScope.launch {
+            interactor.insertDataNews(news)
+        }
+    }
+
+
+
+    fun deleteDataNews(title: String?) {
+        viewModelScope.launch {
+            interactor.deleteDataNews(title)
         }
     }
 }

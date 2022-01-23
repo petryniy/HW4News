@@ -21,9 +21,9 @@ data class Articles(
     @SerializedName("description")
     val description: String?,
     @SerializedName("url")
-    val articleUrl: String?,
+    val url: String?,
     @SerializedName("urlToImage")
-    val previewUrl: String?,
+    val urlToImage: String?,
     @SerializedName("publishedAt")
     val publishedAt: String?,
     @SerializedName("content")

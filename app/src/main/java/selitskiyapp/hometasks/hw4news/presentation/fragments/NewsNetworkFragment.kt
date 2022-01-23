@@ -10,7 +10,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 import selitskiyapp.hometasks.hw4news.R
 import selitskiyapp.hometasks.hw4news.databinding.FragmentNewsNetworkBinding
 import selitskiyapp.hometasks.hw4news.domain.OnNewsClickListener
-import selitskiyapp.hometasks.hw4news.presentation.recycler.NewsAdapter
+import selitskiyapp.hometasks.hw4news.presentation.recyclernetwork.NewsAdapter
 import selitskiyapp.hometasks.hw4news.presentation.viewmodel.NewsViewModel
 
 class NewsNetworkFragment : Fragment(R.layout.fragment_news_network) {
@@ -22,6 +22,12 @@ class NewsNetworkFragment : Fragment(R.layout.fragment_news_network) {
     private val newsClickListener: OnNewsClickListener = object : OnNewsClickListener {
         override fun onIconClickListener(position: Int) {
             viewModel.onNewsItemClicked(position)
+
+            if(viewModel.news.value!![position].isChecked) {
+            viewModel.insertToDataNews(viewModel.news.value!![position])
+            } else {
+                viewModel.deleteDataNews(viewModel.news.value?.get(position)!!.title)
+            }
         }
     }
 
