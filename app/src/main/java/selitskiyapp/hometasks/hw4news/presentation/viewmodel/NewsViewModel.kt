@@ -19,7 +19,6 @@ class NewsViewModel(private val interactor: NewsInteractor) : ViewModel() {
         list[position] = item.copy(isChecked = !item.isChecked)
         _news.value = list
 
-        insertToDataNews(item)
     }
 
     fun loadNetworkNews() {
@@ -31,14 +30,6 @@ class NewsViewModel(private val interactor: NewsInteractor) : ViewModel() {
     fun insertToDataNews(news: News) {
         viewModelScope.launch {
             interactor.insertDataNews(news)
-        }
-    }
-
-
-
-    fun deleteDataNews(title: String?) {
-        viewModelScope.launch {
-            interactor.deleteDataNews(title)
         }
     }
 }

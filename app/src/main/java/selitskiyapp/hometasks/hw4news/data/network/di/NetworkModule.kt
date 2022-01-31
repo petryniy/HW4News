@@ -7,6 +7,4 @@ val networkModule = module {
     single {
         RetrofitClient.getNewsApi()
     }
-
-
 }

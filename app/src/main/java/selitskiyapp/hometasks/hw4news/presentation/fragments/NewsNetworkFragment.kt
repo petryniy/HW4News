@@ -52,7 +52,7 @@ class NewsNetworkFragment : Fragment(R.layout.fragment_news_network) {
     }
 
     private fun initObservers() {
-        viewModel.news.observe(this) { news ->
+        viewModel.news.observe(viewLifecycleOwner) { news ->
             adapter.submitList(news)
         }
     }
