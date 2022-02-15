@@ -1,8 +1,8 @@
-package selitskiyapp.hometasks.hw4news.domain
+package selitskiyapp.hometasks.hw4news.data
 
-import selitskiyapp.hometasks.hw4news.data.dao.NewsEntity
-import selitskiyapp.hometasks.hw4news.data.network.Articles
-import selitskiyapp.hometasks.hw4news.presentation.objects.News
+import selitskiyapp.hometasks.hw4news.data.models.NewsEntity
+import selitskiyapp.hometasks.hw4news.data.models.Articles
+import selitskiyapp.hometasks.hw4news.presentation.models.News
 
 fun NewsEntity.toNews() =
         News(

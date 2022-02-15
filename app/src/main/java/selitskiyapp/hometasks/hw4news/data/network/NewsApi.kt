@@ -2,7 +2,8 @@ package selitskiyapp.hometasks.hw4news.data.network
 
 import retrofit2.http.GET
 import retrofit2.http.Query
-import selitskiyapp.hometasks.hw4news.data.network.SourceResponse
+import selitskiyapp.hometasks.hw4news.data.models.NewsResponse
+import selitskiyapp.hometasks.hw4news.data.models.SourceResponse
 
 interface NewsApi {
 
@@ -42,7 +43,7 @@ interface NewsApi {
 
     @GET("sources")
     fun getSource(
-        @Query("categoty") category: String,
+        @Query("category") category: String,
         @Query("language") language: String,
         @Query("country") country: String,
         @Query("apiKey") apiKey: String = RetrofitClient.API_KEY
@@ -126,7 +127,7 @@ interface NewsApi {
         @Query("sortBy") sortBy: String,
         @Query("page") pageNumber: Int = 1,
         @Query("sources") sources: String = "Lenta",
-        @Query("pageSize") pageSize: Int = 5,
+        @Query("pageSize") pageSize: Int = 20,
         @Query("apiKey") apiKey: String = RetrofitClient.API_KEY
     ): NewsResponse
 

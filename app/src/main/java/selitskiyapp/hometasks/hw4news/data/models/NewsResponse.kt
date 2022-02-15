@@ -1,4 +1,4 @@
-package selitskiyapp.hometasks.hw4news.data.network
+package selitskiyapp.hometasks.hw4news.data.models
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,18 +1,19 @@
-package selitskiyapp.hometasks.hw4news.domain
+package selitskiyapp.hometasks.hw4news.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import selitskiyapp.hometasks.hw4news.data.dao.NewsDao
+import selitskiyapp.hometasks.hw4news.data.models.NewsResponse
 import selitskiyapp.hometasks.hw4news.data.network.NewsApi
-import selitskiyapp.hometasks.hw4news.data.network.NewsResponse
-import selitskiyapp.hometasks.hw4news.presentation.objects.News
+import selitskiyapp.hometasks.hw4news.domain.NewsRepository
+import selitskiyapp.hometasks.hw4news.presentation.models.News
 
-class NewsInteractorImpl(
+class NewsRepositoryImpl(
     private val newsDao: NewsDao,
     private val newsApi: NewsApi
-) : NewsInteractor {
+) : NewsRepository {
     override suspend fun getNetworkNews(): List<News> {
         return withContext(Dispatchers.IO) {
             downloadNetworkNews().articles.map { articles ->
@@ -29,22 +30,14 @@ class NewsInteractorImpl(
         }
     }
 
-    override fun getDataLiveNews(): LiveData<List<News>> {
-        return newsDao.getAllLiveData().map { list ->
-            list.map { newsEntity -> newsEntity.toNews() }
-        }
-    }
-
     override suspend fun insertDataNews(news: News) {
-        return withContext(Dispatchers.IO) {
+         withContext(Dispatchers.IO) {
             newsDao.insertNews(news.toNewsEntity())
         }
     }
 
-    override suspend fun deleteDataNews(title: String?) {
-        withContext(Dispatchers.IO) {
-            newsDao.deleteNews(title)
-        }
+    override suspend fun deleteDataNews(news: News) {
+        newsDao.deleteNews(news.toNewsEntity())
     }
 
     private suspend fun downloadNetworkNews(): NewsResponse {

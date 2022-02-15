@@ -1,4 +1,4 @@
-package selitskiyapp.hometasks.hw4news.presentation.objects
+package selitskiyapp.hometasks.hw4news.presentation.models
 
 data class News (
     val title : String?,

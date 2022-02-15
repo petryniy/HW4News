@@ -1,10 +1,10 @@
-package selitskiyapp.hometasks.hw4news.presentation.recyclernetwork
+package selitskiyapp.hometasks.hw4news.presentation.recyclershared
 
 import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import selitskiyapp.hometasks.hw4news.domain.OnNewsClickListener
-import selitskiyapp.hometasks.hw4news.presentation.objects.News
+import selitskiyapp.hometasks.hw4news.presentation.models.News
 
 class NewsAdapter(
     private val itemClickListener: OnNewsClickListener

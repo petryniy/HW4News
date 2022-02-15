@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/newsFragment"
-        android:name="selitskiyapp.hometasks.hw4news.presentation.fragments.NewsNetworkFragment"
+        android:name="selitskiyapp.hometasks.hw4news.presentation.view.fragments.NewsNetworkFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news_network" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/newsDAOFragment"
-        android:name="selitskiyapp.hometasks.hw4news.presentation.fragments.NewsDAOFragment"
+        android:name="selitskiyapp.hometasks.hw4news.presentation.view.fragments.NewsDAOFragment"
         android:label="fragment_news_d_a_o"
         tools:layout="@layout/fragment_news_d_a_o" >
         <action

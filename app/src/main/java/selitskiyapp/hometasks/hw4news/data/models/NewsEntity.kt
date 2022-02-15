@@ -1,4 +1,4 @@
-package selitskiyapp.hometasks.hw4news.data.dao
+package selitskiyapp.hometasks.hw4news.data.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,4 +1,4 @@
-package selitskiyapp.hometasks.hw4news.presentation.recyclernetwork
+package selitskiyapp.hometasks.hw4news.presentation.recyclershared
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import selitskiyapp.hometasks.hw4news.databinding.FragmentNewsItemBinding
 import selitskiyapp.hometasks.hw4news.domain.OnNewsClickListener
-import selitskiyapp.hometasks.hw4news.presentation.objects.News
+import selitskiyapp.hometasks.hw4news.presentation.models.News
 
 class NewsViewHolder(
     private val binding: FragmentNewsItemBinding,
