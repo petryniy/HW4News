@@ -7,18 +7,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import selitskiyapp.hometasks.hw4news.R
 import selitskiyapp.hometasks.hw4news.databinding.FragmentNewsDAOBinding
 import selitskiyapp.hometasks.hw4news.domain.OnNewsClickListener
 import selitskiyapp.hometasks.hw4news.presentation.recyclershared.NewsAdapter
-import selitskiyapp.hometasks.hw4news.presentation.viewmodels.NewsDaoViewModel
-import selitskiyapp.hometasks.hw4news.presentation.viewmodels.NewsNetworkViewModel
+import selitskiyapp.hometasks.hw4news.presentation.viewmodels.NewsSharedViewModel
 
 class NewsDAOFragment : Fragment(R.layout.fragment_news_d_a_o) {
     private val binding: FragmentNewsDAOBinding
     by viewBinding(FragmentNewsDAOBinding::bind)
-    private val sharedViewModel: NewsNetworkViewModel by sharedViewModel()
+    private val sharedViewModel: NewsSharedViewModel by sharedViewModel()
     private val adapter by lazy { NewsAdapter(newsClickListener) }
 
     private val newsClickListener: OnNewsClickListener = object : OnNewsClickListener {

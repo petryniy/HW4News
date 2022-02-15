@@ -11,12 +11,12 @@ import selitskiyapp.hometasks.hw4news.R
 import selitskiyapp.hometasks.hw4news.databinding.FragmentNewsNetworkBinding
 import selitskiyapp.hometasks.hw4news.domain.OnNewsClickListener
 import selitskiyapp.hometasks.hw4news.presentation.recyclershared.NewsAdapter
-import selitskiyapp.hometasks.hw4news.presentation.viewmodels.NewsNetworkViewModel
+import selitskiyapp.hometasks.hw4news.presentation.viewmodels.NewsSharedViewModel
 
 class NewsNetworkFragment : Fragment(R.layout.fragment_news_network) {
     private val binding: FragmentNewsNetworkBinding
             by viewBinding(FragmentNewsNetworkBinding::bind)
-    private val sharedViewModel: NewsNetworkViewModel by sharedViewModel()
+    private val sharedViewModel: NewsSharedViewModel by sharedViewModel()
     private val adapter by lazy { NewsAdapter(newsClickListener) }
 
     private val newsClickListener: OnNewsClickListener = object : OnNewsClickListener {

@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 import selitskiyapp.hometasks.hw4news.domain.NewsRepository
 import selitskiyapp.hometasks.hw4news.presentation.models.News
 
-class NewsNetworkViewModel(private val repository: NewsRepository) : ViewModel() {
+class NewsSharedViewModel(private val repository: NewsRepository) : ViewModel() {
     private val _news = MutableLiveData<List<News>>()
     val news: LiveData<List<News>> get() = _news
 
